@@ -10,6 +10,8 @@ const allowedOrigins = [
   "http://localhost:5173",
   "https://flourishgarden1.surge.sh",
   "https://b11a10-server-side-ecru.vercel.app",
+  "http://rural-run.surge.sh/",
+  "*",
 ];
 
 app.use(
@@ -27,7 +29,7 @@ app.use(
 
 app.use(express.json());
 
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.PASS}@cluster0.as2f3ea.mongodb.net/gardenDB?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.as2f3ea.mongodb.net/gardenDB?retryWrites=true&w=majority`;
 
 mongoose
   .connect(uri)
